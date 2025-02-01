@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flipkart-style Footer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .footer {
+      background-color: #172337;
+      color: #fff;
+      padding: 40px 20px 20px;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-section {
+      flex: 1;
+      min-width: 200px;
+      margin: 10px;
+    }
+
+    .footer-section h3 {
+      font-size: 16px;
+      margin-bottom: 15px;
+      color: #878787;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-section ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s;
+    }
+
+    .footer-section ul li a:hover {
+      color: #ff9f00;
+    }
+
+    .footer-section p {
+      font-size: 14px;
+      margin: 5px 0;
+      color: #fff;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #454d5e;
+      padding: 20px 0;
+      margin-top: 20px;
+    }
+
+    .footer-bottom-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-bottom-content p {
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .payment-icons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .payment-icons i {
+      font-size: 24px;
+      color: #fff;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .footer-section {
+        margin: 20px 0;
+      }
+
+      .footer-bottom-content {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Your landing page content goes here -->
+
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- About Section -->
+      <div class="footer-section">
+        <h3>About</h3>
+        <ul>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Stories</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+
+      <!-- Help Section -->
+      <div class="footer-section">
+        <h3>Help</h3>
+        <ul>
+          <li><a href="#">Payments</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Cancellation & Returns</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Report Infringement</a></li>
+        </ul>
+      </div>
+
+      <!-- Policy Section -->
+      <div class="footer-section">
+        <h3>Policy</h3>
+        <ul>
+          <li><a href="#">Return Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Security</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Sitemap</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Section -->
+      <div class="footer-section">
+        <h3>Social</h3>
+        <ul>
+          <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+          <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+        </ul>
+      </div>
+
+      <!-- Mail Us Section -->
+      <div class="footer-section">
+        <h3>Mail Us</h3>
+        <p>Flipkart Internet Private Limited,</p>
+        <p>Buildings Alyssa, Begonia &</p>
+        <p>Clove Embassy Tech Village,</p>
+        <p>Bengaluru, India</p>
+      </div>
+
+      <!-- Registered Office Section -->
+      <div class="footer-section">
+        <h3>Registered Office</h3>
+        <p>Flipkart Internet Private Limited,</p>
+        <p>Buildings Alyssa, Begonia &</p>
+        <p>Clove Embassy Tech Village,</p>
+        <p>Bengaluru, India</p>
+        <p>CIN: U51109KA2012PTC066107</p>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p>&copy; 2023 Flipkart. All rights reserved.</p>
+        <div class="payment-icons">
+          <i class="fab fa-cc-visa"></i>
+          <i class="fab fa-cc-mastercard"></i>
+          <i class="fab fa-cc-paypal"></i>
+          <i class="fab fa-cc-amazon-pay"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Add any interactive functionality here if needed
+    // For example, toggling sections on mobile or animations
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Example: Toggle footer sections on mobile
+      const footerSections = document.querySelectorAll('.footer-section h3');
+      footerSections.forEach(section => {
+        section.addEventListener('click', () => {
+          section.nextElementSibling.classList.toggle('active');
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

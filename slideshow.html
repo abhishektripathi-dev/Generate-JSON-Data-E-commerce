@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Slideshow</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --text-color: #1f2937;
+        }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+            height: 80vh;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide-content {
+            position: absolute;
+            bottom: 20%;
+            left: 5%;
+            color: white;
+            max-width: 600px;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+
+        .slide-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide-text {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .slide-button {
+            padding: 1rem 2rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background 0.3s ease;
+        }
+
+        .slide-button:hover {
+            background: var(--secondary-color);
+        }
+
+        .controls {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 1rem;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            color: white;
+            font-size: 2rem;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            transition: background 0.3s ease;
+        }
+
+        .prev:hover, .next:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .dots-container {
+            position: absolute;
+            bottom: 2rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            transition: background 0.3s ease;
+        }
+
+        .dot.active {
+            background: white;
+        }
+
+        @media (max-width: 768px) {
+            .slide-title {
+                font-size: 2rem;
+            }
+
+            .slide-text {
+                font-size: 1rem;
+            }
+
+            .slide-content {
+                bottom: 10%;
+                padding: 1rem;
+            }
+
+            .slide-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            .slideshow-container {
+                height: 60vh;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slide-title {
+                font-size: 1.5rem;
+            }
+
+            .slide-text {
+                font-size: 0.9rem;
+            }
+
+            .slide-content {
+                bottom: 5%;
+                left: 2%;
+                right: 2%;
+            }
+
+            .slideshow-container {
+                height: 50vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <!-- Slides -->
+        <div class="slide active">
+            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="slide-image" alt="Fashion">
+            <div class="slide-content">
+                <h2 class="slide-title">New Collection 2025</h2>
+                <p class="slide-text">Discover our latest fashion trends for the season</p>
+                <button class="slide-button">Shop Now</button>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1643536768336-8f62ddacd123?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="slide-image" alt="Electronics">
+            <div class="slide-content">
+                <h2 class="slide-title">Latest Gadgets</h2>
+                <p class="slide-text">Upgrade your tech with our newest arrivals</p>
+                <button class="slide-button">Explore More</button>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="https://plus.unsplash.com/premium_photo-1683133261283-78fe47339160?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="slide-image" alt="Sale">
+            <div class="slide-content">
+                <h2 class="slide-title">Summer Sale</h2>
+                <p class="slide-text">Up to 70% off selected items - Limited time only!</p>
+                <button class="slide-button">View Deals</button>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <div class="prev"><i class="fas fa-chevron-left"></i></div>
+            <div class="next"><i class="fas fa-chevron-right"></i></div>
+        </div>
+
+        <!-- Dots -->
+        <div class="dots-container"></div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const dotsContainer = document.querySelector('.dots-container');
+        let currentSlide = 0;
+        let autoPlayInterval;
+
+        // Create dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => showSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll('.dot');
+
+        // Navigation functions
+        function showSlide(index) {
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+            currentSlide = (index + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Auto-play functionality
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(nextSlide, 5000);
+        }
+
+        function stopAutoPlay() {
+            clearInterval(autoPlayInterval);
+        }
+
+        // Event listeners
+        document.querySelector('.next').addEventListener('click', () => {
+            nextSlide();
+            stopAutoPlay();
+            startAutoPlay();
+        });
+
+        document.querySelector('.prev').addEventListener('click', () => {
+            prevSlide();
+            stopAutoPlay();
+            startAutoPlay();
+        });
+
+        // Touch swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        slideshowContainer.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        slideshowContainer.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            if (touchStartX - touchEndX > 50) nextSlide();
+            if (touchEndX - touchStartX > 50) prevSlide();
+        });
+
+        // Initialize
+        startAutoPlay();
+
+        // Responsive adjustments
+        window.addEventListener('resize', () => {
+            // Add any responsive adjustments here
+        });
+    </script>
+</body>
+</html>

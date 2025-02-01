@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce Product Grid</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>E-Commerce Product Grid</h1>
+  </header>
+  <main>
+    <!-- Filters -->
+    <div class="filters">
+      <select id="category-filter">
+        <option value="">All Categories</option>
+        <option value="1">Electronics</option>
+        <option value="2">Fashion</option>
+        <option value="3">Home & Kitchen</option>
+        <option value="4">Beauty & Personal Care</option>
+        <option value="5">Sports</option>
+        <option value="6">Books</option>
+        <option value="7">Toys</option>
+        <option value="8">Furniture</option>
+      </select>
+      <select id="price-filter">
+        <option value="">All Prices</option>
+        <option value="0-50">$0 - $50</option>
+        <option value="50-100">$50 - $100</option>
+        <option value="100-200">$100 - $200</option>
+        <option value="200-500">$200 - $500</option>
+      </select>
+    </div>
+
+    <!-- Product Grid -->
+    <div id="product-grid" class="product-grid"></div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+      <button id="prev-page">Previous</button>
+      <span id="page-info">Page 1 of 1</span>
+      <button id="next-page">Next</button>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
